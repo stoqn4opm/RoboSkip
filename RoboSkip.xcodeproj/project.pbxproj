@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32DAB6A31E39EF040073D53B /* SKSpriteNode+TiledSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A21E39EF040073D53B /* SKSpriteNode+TiledSpriteNode.m */; };
+		32DAB6A61E39EFF00073D53B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A51E39EFF00073D53B /* GameScene.swift */; };
+		32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */; };
+		32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */; };
 		32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABDC21E31568E00E392B1 /* AppDelegate.swift */; };
-		32DABDC51E31568E00E392B1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDC41E31568E00E392B1 /* GameScene.sks */; };
-		32DABDC71E31568E00E392B1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDC61E31568E00E392B1 /* Actions.sks */; };
-		32DABDC91E31568E00E392B1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABDC81E31568E00E392B1 /* GameScene.swift */; };
 		32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABDCA1E31568E00E392B1 /* GameViewController.swift */; };
 		32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCC1E31568E00E392B1 /* Main.storyboard */; };
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
@@ -18,11 +19,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32DAB6A11E39EF040073D53B /* RoboSkip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoboSkip-Bridging-Header.h"; sourceTree = "<group>"; };
+		32DAB6A21E39EF040073D53B /* SKSpriteNode+TiledSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKSpriteNode+TiledSpriteNode.m"; sourceTree = "<group>"; };
+		32DAB6A41E39EF340073D53B /* SKSpriteNode+TiledSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKSpriteNode+TiledSpriteNode.h"; sourceTree = "<group>"; };
+		32DAB6A51E39EFF00073D53B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_opengl.fsh; sourceTree = "<group>"; };
+		32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_metal.fsh; sourceTree = "<group>"; };
 		32DABDBF1E31568E00E392B1 /* RoboSkip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboSkip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DABDC21E31568E00E392B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32DABDC41E31568E00E392B1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		32DABDC61E31568E00E392B1 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		32DABDC81E31568E00E392B1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		32DABDCA1E31568E00E392B1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		32DABDCD1E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32DABDCF1E31568E00E392B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,16 +65,35 @@
 			isa = PBXGroup;
 			children = (
 				32DABDC21E31568E00E392B1 /* AppDelegate.swift */,
-				32DABDC41E31568E00E392B1 /* GameScene.sks */,
-				32DABDC61E31568E00E392B1 /* Actions.sks */,
-				32DABDC81E31568E00E392B1 /* GameScene.swift */,
 				32DABDCA1E31568E00E392B1 /* GameViewController.swift */,
+				32DAB6A51E39EFF00073D53B /* GameScene.swift */,
+				32E4687B1E3B0AC600AC5AF0 /* Tiled SKSpriteNode */,
 				32DABDCC1E31568E00E392B1 /* Main.storyboard */,
 				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,
 				32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */,
 				32DABDD41E31568E00E392B1 /* Info.plist */,
+				32DAB6A11E39EF040073D53B /* RoboSkip-Bridging-Header.h */,
 			);
 			path = RoboSkip;
+			sourceTree = "<group>";
+		};
+		32E4687B1E3B0AC600AC5AF0 /* Tiled SKSpriteNode */ = {
+			isa = PBXGroup;
+			children = (
+				32DAB6A41E39EF340073D53B /* SKSpriteNode+TiledSpriteNode.h */,
+				32DAB6A21E39EF040073D53B /* SKSpriteNode+TiledSpriteNode.m */,
+				32E4687C1E3B0ADD00AC5AF0 /* Custom Shaders */,
+			);
+			name = "Tiled SKSpriteNode";
+			sourceTree = "<group>";
+		};
+		32E4687C1E3B0ADD00AC5AF0 /* Custom Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */,
+				32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */,
+			);
+			name = "Custom Shaders";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +128,7 @@
 				TargetAttributes = {
 					32DABDBE1E31568D00E392B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,11 +156,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */,
 				32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */,
-				32DABDC51E31568E00E392B1 /* GameScene.sks in Resources */,
 				32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */,
 				32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */,
-				32DABDC71E31568E00E392B1 /* Actions.sks in Resources */,
+				32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DABDC91E31568E00E392B1 /* GameScene.swift in Sources */,
 				32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */,
+				32DAB6A31E39EF040073D53B /* SKSpriteNode+TiledSpriteNode.m in Sources */,
+				32DAB6A61E39EFF00073D53B /* GameScene.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,10 +297,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RoboSkip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stoqn4o-pm.RoboSkip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoboSkip/RoboSkip-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -284,10 +313,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RoboSkip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stoqn4o-pm.RoboSkip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoboSkip/RoboSkip-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -311,6 +343,7 @@
 				32DABDD91E31568E00E392B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
