@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SpriteKit
 
 class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let tile = SKSpriteNode.generateRepeatTiledImageNode(withTile: "sonic", size: UIScreen.main.bounds.size)
-        tile?.anchorPoint = CGPoint.init(x: 0.0, y: 0.0)
-        tile?.position = .zero
+        let tile = SKSpriteNode.generateRepeatTiledNodeWithTile(tile: "sonic", backgroundSizePoints: UIScreen.main.bounds.size)
+        tile.anchorPoint = CGPoint.zero
+        tile.position = .zero
 //        tile?.zPosition = 0
-        tile?.size = CGSize(width: 1, height: 1)
-        self.addChild(tile!)
+        tile.size = CGSize(width: 1, height: 1)
+        self.addChild(tile)
     }
 }
