@@ -12,11 +12,11 @@ import SpriteKit
 class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let tile = SKSpriteNode.generateRepeatTiledNodeWithTile(tile: "sonic", backgroundSizePoints: UIScreen.main.bounds.size)
-        tile.anchorPoint = CGPoint.zero
-        tile.position = .zero
-//        tile?.zPosition = 0
-        tile.size = CGSize(width: 1, height: 1)
+        let tile = SKSpriteNode.generateRepeatTiledNodeWithTile(tile: "sonic", tileSize: CGSize(width: 1, height: 1), coverageSize: CGSize(width: 367, height: 600))
+        
+//        tile.size = CGSize(width: 1, height: 1)
+        let move = SKAction.move(to: CGPoint(x: 100, y: 100), duration: 200)
+        tile.run(move)
         self.addChild(tile)
     }
 }
