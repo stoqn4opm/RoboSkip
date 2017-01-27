@@ -11,19 +11,25 @@ import SpriteKit
 
 extension SKSpriteNode {
     
-    static func generateRepeatTiledNodeWithTile(tile: String, tileSize: CGSize, coverageSize: CGSize) -> SKSpriteNode {
+    static func generateRepeatTiledNodeWithTile(tile: String, backgroundSizePoints: CGSize) -> SKSpriteNode? {
         
         // Load the tile as a SKTexture
         let tileTex = SKTexture.init(imageNamed: tile)
         
+        // Dimensions of tile image
+        let tileSizePixels = CGSize(width: tileTex.size().width, height: tileTex.size().height)
+        
         // Generate tile that exactly covers the whole screen
         let screenScale = UIScreen.main.scale
-        let coverageSizePixels = CGSize(width: coverageSize.width * screenScale, height: coverageSize.height * screenScale)
+        
+        let coverageSizePixels = CGSize(width: backgroundSizePoints.width * screenScale, height: backgroundSizePoints.height * screenScale)
+        
+        let coverageSizePoints = CGSize(width: coverageSizePixels.width / screenScale, height: coverageSizePixels.height / screenScale)
         
         // Make shader and calculate uniforms to be used for pixel center calculations
         
         let infoDict = Bundle.main.infoDictionary
-        let preferesOpenGLNum = infoDict!["PrefersOpenGL"] as! NSNumber
+        guard let preferesOpenGLNum = infoDict?["PrefersOpenGL"] as? NSNumber else { return nil }
         let preferesOpenGL = preferesOpenGLNum.boolValue
         
         // OpenGL shader : 60 FPS
@@ -39,8 +45,6 @@ extension SKSpriteNode {
         shader.addUniform(SKUniform(name: "outSampleHalfPixelOffset", float: GLKVector2Make(outSampleHalfPixelOffsetX, outSampleHalfPixelOffsetY)))
         
         // normalized width passed into mod operation
-        let tileSizePixels = CGSize(width: tileTex.size().width, height: tileTex.size().height)
-        
         let tileWidth = Float(tileSizePixels.width)
         let tileHeight = Float(tileSizePixels.height)
         
@@ -53,14 +57,11 @@ extension SKSpriteNode {
         shader.addUniform(SKUniform(name: "inSampleHalfPixelOffset", float: GLKVector2Make(inSampleHalfPixelOffsetX, inSampleHalfPixelOffsetY)))
         
         // Attach shader to node
-        
-        let node = SKSpriteNode(color: .white, size: tileSize)
+        let node = SKSpriteNode(color: .white, size: coverageSizePoints)
         node.texture = tileTex
         node.texture?.filteringMode = .nearest
         node.shader = shader
-        node.anchorPoint = CGPoint.zero
-        node.position = .zero
+        node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         return node
     }
-    
 }

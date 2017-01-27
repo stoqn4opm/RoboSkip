@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32DAB6A61E39EFF00073D53B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A51E39EFF00073D53B /* GameScene.swift */; };
+		32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A51E39EFF00073D53B /* MenuScene.swift */; };
 		32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */; };
 		32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */; };
 		32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DABDC21E31568E00E392B1 /* AppDelegate.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32DAB6A51E39EFF00073D53B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		32DAB6A51E39EFF00073D53B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_opengl.fsh; sourceTree = "<group>"; };
 		32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_metal.fsh; sourceTree = "<group>"; };
 		32DABDBF1E31568E00E392B1 /* RoboSkip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboSkip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 			children = (
 				32DABDC21E31568E00E392B1 /* AppDelegate.swift */,
 				32DABDCA1E31568E00E392B1 /* GameViewController.swift */,
-				32DAB6A51E39EFF00073D53B /* GameScene.swift */,
+				32DAB6A51E39EFF00073D53B /* MenuScene.swift */,
 				32E4687B1E3B0AC600AC5AF0 /* Tiled SKSpriteNode */,
 				32DABDCC1E31568E00E392B1 /* Main.storyboard */,
 				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,
@@ -124,6 +124,7 @@
 				TargetAttributes = {
 					32DABDBE1E31568D00E392B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PPF77J63K7;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -168,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */,
-				32DAB6A61E39EFF00073D53B /* GameScene.swift in Sources */,
+				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
 			);
@@ -294,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PPF77J63K7;
 				INFOPLIST_FILE = RoboSkip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -310,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PPF77J63K7;
 				INFOPLIST_FILE = RoboSkip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
