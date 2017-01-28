@@ -15,8 +15,11 @@ class GameManager {
     static let shared : GameManager = {
         let skView = SKView(frame: UIScreen.main.bounds)
         
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        // various debug options
+//        skView.showsFPS = true
+//        skView.showsNodeCount = true
+//        skView.showsFields = true
+//        skView.showsPhysics = true
         
         let instance = GameManager(skView: skView)
         return instance
