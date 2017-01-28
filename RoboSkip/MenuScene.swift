@@ -13,7 +13,7 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        guard let tile = SKSpriteNode.generateRepeatTiledNodeWithTile(tile: "sonic", backgroundSizePoints: CGSize.init(width: 4000, height: 4000)) else { return }
+        guard let tile = SKSpriteNode.generateRepeatTiledNodeWithTile(tile: "robothead", backgroundSizePoints: CGSize.init(width: 4000, height: 4000)) else { return }
         tile.position = CGPoint(x: self.frame.midX, y:self.frame.midY)
         
         let action = SKAction.moveBy(x: 300, y: 300, duration: 5)

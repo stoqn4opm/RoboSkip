@@ -30,6 +30,7 @@
 		32DABDCF1E31568E00E392B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DABDD21E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiledBackgroung.psd; sourceTree = "<group>"; };
 		32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledSKSpriteNode.swift; sourceTree = "<group>"; };
 		32E468861E3B381500AC5AF0 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,10 +68,19 @@
 				32E468831E3B37AE00AC5AF0 /* Storyboards */,
 				32DABDC21E31568E00E392B1 /* AppDelegate.swift */,
 				32E468841E3B37D800AC5AF0 /* Game Scenes */,
-				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,
+				32E2DB051E3D2DBB002FA656 /* Art */,
 				32DABDD41E31568E00E392B1 /* Info.plist */,
 			);
 			path = RoboSkip;
+			sourceTree = "<group>";
+		};
+		32E2DB051E3D2DBB002FA656 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */,
+				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,
+			);
+			name = Art;
 			sourceTree = "<group>";
 		};
 		32E4687B1E3B0AC600AC5AF0 /* Tiled SKSpriteNode */ = {
