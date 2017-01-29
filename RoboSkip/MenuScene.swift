@@ -93,3 +93,10 @@ extension CGSize {
         return CGSize(width: width * scale, height: height * scale)
     }
 }
+
+
+extension MenuScene {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        GameManager.shared.loadLevelScene()
+    }
+}

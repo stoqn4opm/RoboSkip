@@ -39,6 +39,15 @@ extension GameManager {
     
     func loadMenuScene() {
         let scene = MenuScene(size: skView.frame.size)
+        loadScene(scene: scene)
+    }
+    
+    func loadLevelScene() {
+        let scene = LevelScene(size: skView.frame.size)
+        loadScene(scene: scene)
+    }
+    
+    private func loadScene(scene: SKScene) {
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
