@@ -15,6 +15,7 @@
 		32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCC1E31568E00E392B1 /* Main.storyboard */; };
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
 		32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */; };
+		32E32C5B1E3E3064009858D9 /* Sketch 3D.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */; };
 		32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */; };
 		32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E468861E3B381500AC5AF0 /* GameManager.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiledBackgroung.psd; sourceTree = "<group>"; };
 		32E32C591E3DFCBC009858D9 /* title.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = title.psd; sourceTree = "<group>"; };
+		32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sketch 3D.otf"; sourceTree = "<group>"; };
 		32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledSKSpriteNode.swift; sourceTree = "<group>"; };
 		32E468861E3B381500AC5AF0 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 		32E2DB051E3D2DBB002FA656 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */,
 				32E32C591E3DFCBC009858D9 /* title.psd */,
 				32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */,
 				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */,
+				32E32C5B1E3E3064009858D9 /* Sketch 3D.otf in Resources */,
 				32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */,
 				32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */,
 				32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */,

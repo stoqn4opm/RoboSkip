@@ -13,10 +13,37 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         prepareBackground()
+        prepareForeground()
+        
+    }
+}
+
+extension MenuScene {
+    
+    func prepareForeground() {
+        
         let titleNode = SKSpriteNode(imageNamed: "title")
         titleNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         titleNode.position = CGPoint(x: self.frame.midX, y: self.frame.height * 0.25)
+        titleNode.setScale(0)
+        titleNode.run(SKAction.scale(to: 1, duration: 1))
         self.addChild(titleNode)
+        
+        
+        let startNode = SKSpriteNode(imageNamed: "tapToStart")
+        startNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        startNode.position = CGPoint(x: self.frame.midX, y: -self.frame.height * 0.25)
+        self.addChild(startNode)
+        
+        // start node flashing animation
+        startNode.alpha = 0
+        let sequence = SKAction.sequence([SKAction.wait(forDuration: 1),
+                                          SKAction.fadeOut(withDuration: 0.5),
+                                          SKAction.wait(forDuration: 0.5),
+                                          SKAction.fadeIn(withDuration: 0.5),
+                                          SKAction.wait(forDuration: 1)])
+        
+        startNode.run(SKAction.repeatForever(sequence))
     }
 }
 
@@ -48,9 +75,9 @@ extension MenuScene {
         let maskNode = SKShapeNode(rect: tiledBackgroundNode.frame)
         maskNode.fillColor = .black
         self.addChild(maskNode)
-        let fadeInOfTilesAction = SKAction.sequence([SKAction.fadeOut(withDuration: 2), SKAction.run {
-            maskNode.removeFromParent()
-            }])
+        let fadeInOfTilesAction = SKAction.sequence([SKAction.wait(forDuration: 1),
+                                                     SKAction.fadeOut(withDuration: 2),
+                                                     SKAction.run { maskNode.removeFromParent() }])
         maskNode.run(fadeInOfTilesAction)
         
         // setting up noise field
