@@ -13,6 +13,10 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         prepareBackground()
+        let titleNode = SKSpriteNode(imageNamed: "title")
+        titleNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        titleNode.position = CGPoint(x: self.frame.midX, y: self.frame.height * 0.25)
+        self.addChild(titleNode)
     }
 }
 
