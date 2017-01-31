@@ -12,26 +12,37 @@ import SpriteKit
 
 class LevelScene: SKScene {
     
+    var leftSpring: SKPhysicsJointSpring?
+    var rightSpring: SKPhysicsJointSpring?
+    var character: CharacterNode!
+    
     override func didMove(to view: SKView) {
 
         setupGround()
-        
-        let body = SKSpriteNode(color: .red, size: CGSize(width: 150, height: 150))
-        body.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        body.position = CGPoint(x: self.frame.midX, y: 200 + self.frame.midY)
-        self.addChild(body)
-        
-        body.physicsBody = SKPhysicsBody(rectangleOf: body.frame.size)
-        
-        let arm =  SKSpriteNode(color: .green, size: CGSize(width: 50, height: 50))
-        arm.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        arm.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        self.addChild(arm)
-        
-        arm.physicsBody =  SKPhysicsBody(rectangleOf: arm.frame.size)
-        
-        let springJoint = SKPhysicsJointSpring.joint(withBodyA: body.physicsBody!, bodyB: arm.physicsBody!, anchorA: .zero, anchorB: CGPoint(x: 20, y: 30))
-     self.physicsWorld.add(springJoint)
+        character = CharacterNode(forScene: self)
+        character.setupPhysics(forScene: self)
+        self.addChild(character)
+    }
+}
+
+extension LevelScene {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for spring in character.leftFeetSprings! {
+            spring.frequency = 1
+        }
+        for spring in character.rightFeetSprings! {
+            spring.frequency = 1
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for spring in character.leftFeetSprings! {
+            spring.frequency = 5
+        }
+        for spring in character.rightFeetSprings! {
+            spring.frequency = 5
+        }
     }
 }
 
