@@ -20,7 +20,6 @@ class LevelScene: SKScene {
 
         setupGround()
         character = CharacterNode(forScene: self)
-        character.setupPhysics(forScene: self)
         self.addChild(character)
     }
 }
@@ -28,21 +27,11 @@ class LevelScene: SKScene {
 extension LevelScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for spring in character.leftFeetSprings! {
-            spring.frequency = 1
-        }
-        for spring in character.rightFeetSprings! {
-            spring.frequency = 1
-        }
+        character.bendSpring()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for spring in character.leftFeetSprings! {
-            spring.frequency = 5
-        }
-        for spring in character.rightFeetSprings! {
-            spring.frequency = 5
-        }
+        character.extendSpring()
     }
 }
 
@@ -52,6 +41,7 @@ extension LevelScene {
         
         let groundSize = CGSize(width: self.frame.width, height: self.frame.height * 0.1)
         let groundNode = SKSpriteNode(color: .gray, size: groundSize)
+        groundNode.name = "ground"
         groundNode.anchorPoint = CGPoint(x: 0, y: 0)
         self.addChild(groundNode)
         groundNode.position = CGPoint(x: 0, y: 0)
