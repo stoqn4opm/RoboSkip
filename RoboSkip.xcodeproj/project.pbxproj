@@ -20,6 +20,7 @@
 		32E32C5D1E3E3FA0009858D9 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E32C5C1E3E3FA0009858D9 /* LevelScene.swift */; };
 		32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */; };
 		32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E468861E3B381500AC5AF0 /* GameManager.swift */; };
+		32E9F5751E430BC100B3E326 /* Rope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E9F5741E430BC100B3E326 /* Rope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		32E32C5C1E3E3FA0009858D9 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledSKSpriteNode.swift; sourceTree = "<group>"; };
 		32E468861E3B381500AC5AF0 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		32E9F5741E430BC100B3E326 /* Rope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rope.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				32E32C5C1E3E3FA0009858D9 /* LevelScene.swift */,
 				32DC7B191E40610600E4E96D /* CharacterNode.swift */,
+				32E9F5741E430BC100B3E326 /* Rope.swift */,
 			);
 			name = "Level Scene";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
 				32DC7B1A1E40610600E4E96D /* CharacterNode.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
+				32E9F5751E430BC100B3E326 /* Rope.swift in Sources */,
 				32E32C5D1E3E3FA0009858D9 /* LevelScene.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
 				32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */,

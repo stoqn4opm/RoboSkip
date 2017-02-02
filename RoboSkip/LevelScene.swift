@@ -19,8 +19,9 @@ class LevelScene: SKScene {
     override func didMove(to view: SKView) {
 
         setupGround()
-        character = CharacterNode(forScene: self)
-        self.addChild(character)
+        let mid = CGPoint(x: self.frame.midX - 100, y: self.frame.midY + 100)
+        let rope = Rope(withStartPoint: mid, endPoint: CGPoint(x:mid.x + 180, y:mid.y), numberOfSegments: 20, forScene: self)
+        self.addChild(rope)
     }
 }
 
