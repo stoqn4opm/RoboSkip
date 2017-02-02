@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B8841E41D52F0054984D /* HelperExtensions.swift */; };
 		32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A51E39EFF00073D53B /* MenuScene.swift */; };
 		32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */; };
 		32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */; };
@@ -15,12 +16,14 @@
 		32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCC1E31568E00E392B1 /* Main.storyboard */; };
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
 		32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */; };
+		32DC7B1A1E40610600E4E96D /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC7B191E40610600E4E96D /* CharacterNode.swift */; };
 		32E32C5D1E3E3FA0009858D9 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E32C5C1E3E3FA0009858D9 /* LevelScene.swift */; };
 		32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */; };
 		32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E468861E3B381500AC5AF0 /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3238B8841E41D52F0054984D /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		32DAB6A51E39EFF00073D53B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_opengl.fsh; sourceTree = "<group>"; };
 		32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_metal.fsh; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		32DABDCF1E31568E00E392B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DABDD21E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DC7B191E40610600E4E96D /* CharacterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterNode.swift; sourceTree = "<group>"; };
 		32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiledBackgroung.psd; sourceTree = "<group>"; };
 		32E32C591E3DFCBC009858D9 /* title.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = title.psd; sourceTree = "<group>"; };
 		32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sketch 3D.otf"; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			children = (
 				32E468831E3B37AE00AC5AF0 /* Storyboards */,
 				32DABDC21E31568E00E392B1 /* AppDelegate.swift */,
+				3238B8841E41D52F0054984D /* HelperExtensions.swift */,
 				32E468841E3B37D800AC5AF0 /* Game Scenes */,
 				32E2DB051E3D2DBB002FA656 /* Art */,
 				32DABDD41E31568E00E392B1 /* Info.plist */,
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				32E32C5C1E3E3FA0009858D9 /* LevelScene.swift */,
+				32DC7B191E40610600E4E96D /* CharacterNode.swift */,
 			);
 			name = "Level Scene";
 			sourceTree = "<group>";
@@ -221,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */,
+				3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */,
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
+				32DC7B1A1E40610600E4E96D /* CharacterNode.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
 				32E32C5D1E3E3FA0009858D9 /* LevelScene.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
