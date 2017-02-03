@@ -37,7 +37,7 @@ class Rope: SKSpriteNode {
     
     func position(_ segment: SKSpriteNode) {
         if let lastSegment = segments.last {
-            segment.position = CGPoint(x: lastSegment.position.x  + lastSegment.size.width / 2, y: lastSegment.position.y)
+            segment.position = CGPoint(x: lastSegment.position.x, y: lastSegment.position.y - lastSegment.size.width / 2)
         } else {
             segment.position = startPoint
         }
@@ -63,7 +63,7 @@ extension SKSpriteNode {
         segment.anchorPoint = .normalizedMiddle
         segment.physicsBody = SKPhysicsBody.init(circleOfRadius: segment.size.width / 2)
         segment.physicsBody?.angularDamping = 1
-//        segment.physicsBody?.linearDamping = 1
+        segment.physicsBody?.linearDamping = 1
         
         segment.physicsBody?.categoryBitMask = 1
         segment.physicsBody?.collisionBitMask = 1
