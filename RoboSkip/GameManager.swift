@@ -19,7 +19,7 @@ class GameManager {
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
 //        skView.showsFields = true
-        skView.showsPhysics = true
+//        skView.showsPhysics = true
         
         let instance = GameManager(skView: skView)
         return instance
