@@ -14,6 +14,7 @@ class GameManager {
     //MARK: Shared Instance
     static let shared : GameManager = {
         let skView = SKView(frame: UIScreen.main.bounds)
+        skView.ignoresSiblingOrder = true
         
         // various debug options
 //        skView.showsFPS = true
