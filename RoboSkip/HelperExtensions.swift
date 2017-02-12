@@ -6,7 +6,15 @@
 //  Copyright © 2017 Stoyan Stoyanov. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
+
+
+extension SKReferenceNode {
+    func getBasedChildNode () -> SKNode? {
+        if let child = self.children.first?.children.first {return child}
+        else {return nil}
+    }
+}
 
 extension CGPoint {
     static var normalizedMiddle: CGPoint {

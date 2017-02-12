@@ -1,158 +1,101 @@
 //
-//  MainCharacter.swift
+//  Character.swift
 //  RoboSkip
 //
-//  Created by Stoyan Stoyanov on 1/31/17.
+//  Created by Stoyan Stoyanov on 2/12/17.
 //  Copyright © 2017 Stoyan Stoyanov. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
 
-class CharacterNode: SKSpriteNode {
-    
-    //MARK: - Static Properties
-    static let bodySize = CGSize(width: 120, height: 100)
-    static let headSize = CGSize(width: 80, height: 50)
-    static let neckSize = CGSize(width: 50, height: 30)
-    static let upperFootSize = CGSize(width: 50, height: 30)
-    static let lowerFootSize = CGSize(width: 60, height: 35)
-    
-    //MARK: - Internal Properties
-    fileprivate var body: SKSpriteNode!
-    fileprivate var head: SKSpriteNode!
-    fileprivate var neck: SKSpriteNode!
-    fileprivate var topLeg: SKSpriteNode!
-    fileprivate var bottomLeg: SKSpriteNode!
-    fileprivate var feetSpring: SKPhysicsJointSpring?
-    
-    //MARK: - Public Properties
-    var distanceBetweenTopAndBottomLeg: CGFloat = 80.0
-    var shouldRestrictJumpsToVerticalOnly  = true
-    
-    //MARK: - Initializers
-    init(forScene scene: SKScene) {
-        super.init(texture: nil, color: .clear, size: scene.frame.size)
-        setupBodyParts(forRect: scene.frame)
-        scene.addChild(body)
-        scene.addChild(head)
-        scene.addChild(neck)
-        scene.addChild(topLeg)
-        scene.addChild(bottomLeg)
-        setupPhysics(forScene: scene)
-    }
-    
-    //MARK: Do not use
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-//MARK: - Appearance
-extension CharacterNode {
-   fileprivate func setupBodyParts(forRect rect: CGRect) {
-        
-        // main body
-        self.body = SKSpriteNode(color: .red, size: CharacterNode.bodySize)
-        body.anchorPoint = .normalizedMiddle
-        body.position = CGPoint(x: rect.midX, y: rect.midY)
-
-        // head
-        self.head = SKSpriteNode(color: .blue, size: CharacterNode.headSize)
-        head.anchorPoint = .normalizedMiddle
-        head.position = CGPoint(x: body.position.x, y: body.position.y + body.size.height)
-        
-        // neck
-        self.neck =  SKSpriteNode(color: .green, size: CharacterNode.neckSize)
-        neck.anchorPoint = .normalizedMiddle
-        neck.position = CGPoint(x: body.position.x, y: body.position.y + body.size.height / 2 - neck.size.height / 2)
-        
-        // feet
-        self.topLeg =  SKSpriteNode(color: .green, size: CharacterNode.upperFootSize)
-        topLeg.anchorPoint = .normalizedMiddle
-        topLeg.position = CGPoint(x: body.position.x, y: body.position.y - body.size.height / 2 - topLeg.size.height / 2)
-        
-        self.bottomLeg =  SKSpriteNode(color: .green, size: CharacterNode.lowerFootSize)
-        bottomLeg.anchorPoint = .normalizedMiddle
-        bottomLeg.position = CGPoint(x: body.position.x, y: topLeg.position.y - distanceBetweenTopAndBottomLeg)
-    }
+class CharacterNode: SKNode {
+    fileprivate var bendLimit: SKPhysicsJointLimit?
+    fileprivate let positionSwitchTime = 0.1
+    fileprivate let springStrength: CGFloat = 34
 }
 
 //MARK: - Physics
 extension CharacterNode {
     
-    fileprivate func setupPhysics(forScene scene: SKScene) {
-        body.physicsBody = SKPhysicsBody(rectangleOf: body.frame.size)
-        head.physicsBody = SKPhysicsBody(rectangleOf: head.frame.size)
-        neck.physicsBody = SKPhysicsBody(rectangleOf: neck.frame.size)
-        topLeg.physicsBody =  SKPhysicsBody(rectangleOf: topLeg.frame.size)
-        bottomLeg.physicsBody =  SKPhysicsBody(rectangleOf: bottomLeg.frame.size)
-
-        attachHeadToBody(forScene: scene)
-        attachFeetToBody(forScene: scene)
+    func setupPhysics() {
+        attachHeadToBody()
+        attachFeetToBody()
     }
     
-    fileprivate func attachFeetToBody(forScene scene: SKScene) {
+    fileprivate func attachFeetToBody() {
         
-        let pinAnchorPoint = CGPoint(x: body.position.x, y: body.position.y - body.size.height / 2)
+        guard let body = self.childNode(withName: "body") as? SKSpriteNode else { return }
+        guard let leg = self.childNode(withName: "leg") as? SKSpriteNode else { return }
         
-        let pin = SKPhysicsJointPin.joint(withBodyA: body.physicsBody!,
-                                          bodyB: topLeg.physicsBody!,
-                                          anchor: pinAnchorPoint)
-        pin.shouldEnableLimits = true
-        
-        let spring = SKPhysicsJointSpring.joint(withBodyA: topLeg.physicsBody!,
-                                                bodyB: bottomLeg.physicsBody!,
-                                                anchorA: topLeg.position, anchorB: bottomLeg.position)
-        spring.frequency = 8
-        self.feetSpring = spring
-        
-        let sliding = SKPhysicsJointSliding.joint(withBodyA: topLeg.physicsBody!,
-                                                  bodyB: bottomLeg.physicsBody!,
-                                                  anchor: pinAnchorPoint, axis: CGVector.init(dx: 0, dy: 1))
-        
-        scene.physicsWorld.add(pin)
-        scene.physicsWorld.add(spring)
-        scene.physicsWorld.add(sliding)
-        
-        if shouldRestrictJumpsToVerticalOnly {
-            guard let ground = scene.childNode(withName: "ground") else { return }
-            
-            let sliding1 = SKPhysicsJointSliding.joint(withBodyA: body.physicsBody!,
-                                                      bodyB: ground.physicsBody!,
-                                                      anchor: body.position, axis: CGVector.init(dx: 0, dy: 1))
-            scene.physicsWorld.add(sliding1)
-        }
+        let spring = SKPhysicsJointSpring.joint(withBodyA: body.physicsBody!,
+                                                bodyB: leg.physicsBody!,
+                                                anchorA: body.position,
+                                                anchorB: leg.position)
+        spring.frequency = springStrength
+        let slideLimit = SKPhysicsJointSliding.joint(withBodyA: body.physicsBody!,
+                                                     bodyB: leg.physicsBody!,
+                                                     anchor: body.position,
+                                                     axis: CGVector(dx: 0, dy: 1))
+        self.scene?.physicsWorld.add(spring)
+        self.scene?.physicsWorld.add(slideLimit)
     }
     
-    fileprivate func attachHeadToBody(forScene scene: SKScene) {
+    fileprivate func attachHeadToBody() {
+        guard let body = self.childNode(withName: "body") as? SKSpriteNode else { return }
+        guard let head = self.childNode(withName: "head") as? SKSpriteNode else { return }
         
-        let pin = SKPhysicsJointPin.joint(withBodyA: body.physicsBody!,
-                                          bodyB: neck.physicsBody!,
-                                          anchor: neck.position)
-        pin.shouldEnableLimits = true
-        scene.physicsWorld.add(pin)
-        
-        let spring = SKPhysicsJointSpring.joint(withBodyA: head.physicsBody!,
-                                                bodyB: neck.physicsBody!,
-                                                anchorA: head.position, anchorB: neck.position)
+        let spring = SKPhysicsJointSpring.joint(withBodyA: body.physicsBody!, bodyB: head.physicsBody!, anchorA: body.position, anchorB: head.position)
         spring.frequency = 8
-        scene.physicsWorld.add(spring)
+        let slideLimit = SKPhysicsJointSliding.joint(withBodyA: body.physicsBody!, bodyB: head.physicsBody!, anchor: body.position, axis: CGVector(dx: 0, dy: 1))
         
-        let sliding1 = SKPhysicsJointSliding.joint(withBodyA: head.physicsBody!,
-                                                   bodyB: neck.physicsBody!,
-                                                   anchor: head.position, axis: CGVector.init(dx: 0, dy: 1))
-        scene.physicsWorld.add(sliding1)
+        self.scene?.physicsWorld.add(spring)
+        self.scene?.physicsWorld.add(slideLimit)
     }
 }
 
-//MARK: - Action
+//MARK: - Actions
 extension CharacterNode {
-    func bendSpring() {
-        self.feetSpring?.frequency = 1
+    func bend() {
+        guard let body = self.childNode(withName: "body") as? SKSpriteNode else { return }
+        guard let leg = self.childNode(withName: "leg") as? SKSpriteNode else { return }
+        
+        bendLimit = SKPhysicsJointLimit.joint(withBodyA: body.physicsBody!,
+                                              bodyB: leg.physicsBody!,
+                                              anchorA: body.position,
+                                              anchorB: leg.position)
+        
+        bendLimit!.maxLength = leg.size.height * 1.5
+        self.scene?.physicsWorld.add(bendLimit!)
     }
     
-    func extendSpring() {
-        self.feetSpring?.frequency = 8
+    func jump() {
+        guard let jumpLimit = bendLimit else { return }
+        self.scene?.physicsWorld.remove(jumpLimit)
+    }
+    
+    var scenePlacements: [CGFloat] {
+        guard let width = self.scene?.size.width else { return [] }
+        return [-width / 3, 0, width / 3]
+    }
+    
+    func moveLeft() {
+        if let currentIndex = scenePlacements.index(of: self.position.x) {
+            guard currentIndex > 0 else { return }
+            let newIndex = scenePlacements.index(before: currentIndex)
+            let move = SKAction.moveTo(x: scenePlacements[newIndex], duration: positionSwitchTime)
+            move.timingMode = .easeOut
+            self.run(move)
+        }
+    }
+    
+    func moveRight() {
+        if let currentIndex = scenePlacements.index(of: self.position.x) {
+            guard currentIndex < scenePlacements.count - 1 else { return }
+            let newIndex = scenePlacements.index(after: currentIndex)
+            let move = SKAction.moveTo(x: scenePlacements[newIndex], duration: positionSwitchTime)
+            move.timingMode = .easeOut
+            self.run(move)
+        }
     }
 }
