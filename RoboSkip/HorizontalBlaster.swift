@@ -16,13 +16,13 @@ fileprivate let flashSpeed1RepeatCount = 1
 fileprivate let flashSpeed2RepeatCount = 2
 fileprivate let flashSpeed3RepeatCount = 5
 
-class Blaster: SKNode {
+class HorizontalBlaster: SKNode {
 
-    var leftBlaster: SKSpriteNode? {
-        return self.childNode(withName: "left") as? SKSpriteNode
+    var firstBlaster: SKSpriteNode? {
+        return self.childNode(withName: "first") as? SKSpriteNode
     }
-    var rightBlaster: SKSpriteNode? {
-        return self.childNode(withName: "right") as? SKSpriteNode
+    var secondBlaster: SKSpriteNode? {
+        return self.childNode(withName: "second") as? SKSpriteNode
     }
     var beam: SKSpriteNode? {
         return self.childNode(withName: "beam") as? SKSpriteNode
@@ -30,7 +30,7 @@ class Blaster: SKNode {
 }
 
 //MARK: - Actions
-extension Blaster {
+extension HorizontalBlaster {
     func fire() {
         
         let beamOn = SKAction.run { self.beam?.alpha = 1 }
@@ -49,7 +49,7 @@ extension Blaster {
 
 
 //MARK: - Blasters Alpha Actions
-extension Blaster {
+extension HorizontalBlaster {
     
     fileprivate var flashAtSpeed1Action: SKAction {
         return SKAction.repeat(blinkAtSpeed1Action, count: flashSpeed1RepeatCount)
@@ -79,8 +79,8 @@ extension Blaster {
     private func changeAlphaOfBlastersTo(_ value: CGFloat) -> SKAction {
         return SKAction.run({[weak self] (Void) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.leftBlaster?.alpha = value
-            strongSelf.rightBlaster?.alpha = value
+            strongSelf.firstBlaster?.alpha = value
+            strongSelf.secondBlaster?.alpha = value
         })
     }
 }
