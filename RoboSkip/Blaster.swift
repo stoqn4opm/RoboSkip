@@ -32,9 +32,17 @@ class Blaster: SKNode {
 //MARK: - Actions
 extension Blaster {
     func fire() {
+        
+        let beamOn = SKAction.run { self.beam?.alpha = 1 }
+        let beamOff = SKAction.run { self.beam?.alpha = 0 }
+        
         let flashBlasters = SKAction.sequence([flashAtSpeed1Action,
                                                flashAtSpeed2Action,
-                                               flashAtSpeed3Action])
+                                               flashAtSpeed3Action,
+                                               beamOn,
+                                               SKAction.wait(forDuration: 2),
+                                               beamOff])
+        
         self.run(flashBlasters)
     }
 }
