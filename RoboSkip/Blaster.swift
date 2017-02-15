@@ -16,7 +16,7 @@ fileprivate let flashSpeed1RepeatCount = 1
 fileprivate let flashSpeed2RepeatCount = 2
 fileprivate let flashSpeed3RepeatCount = 5
 
-class HorizontalBlaster: SKNode {
+class Blaster: SKNode {
 
     var firstBlaster: SKSpriteNode? {
         return self.childNode(withName: "first") as? SKSpriteNode
@@ -30,7 +30,7 @@ class HorizontalBlaster: SKNode {
 }
 
 //MARK: - Actions
-extension HorizontalBlaster {
+extension Blaster {
     func fire() {
         
         let beamOn = SKAction.run { self.beam?.alpha = 1 }
@@ -49,7 +49,7 @@ extension HorizontalBlaster {
 
 
 //MARK: - Blasters Alpha Actions
-extension HorizontalBlaster {
+extension Blaster {
     
     fileprivate var flashAtSpeed1Action: SKAction {
         return SKAction.repeat(blinkAtSpeed1Action, count: flashSpeed1RepeatCount)

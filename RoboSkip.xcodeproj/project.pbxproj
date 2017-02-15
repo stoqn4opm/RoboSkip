@@ -19,8 +19,9 @@
 		32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCC1E31568E00E392B1 /* Main.storyboard */; };
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
 		32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */; };
+		32E02E011E54EA7B009826A3 /* VerticalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */; };
 		32E276201E518CAE00544B30 /* HorizontalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */; };
-		32E276231E51909300544B30 /* HorizontalBlaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E276221E51909300544B30 /* HorizontalBlaster.swift */; };
+		32E276231E51909300544B30 /* Blaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E276221E51909300544B30 /* Blaster.swift */; };
 		32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */; };
 		32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E468861E3B381500AC5AF0 /* GameManager.swift */; };
 		32E525611E5057A3007C2110 /* CharacterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E525601E5057A3007C2110 /* CharacterScene.sks */; };
@@ -44,9 +45,10 @@
 		32DABDCF1E31568E00E392B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DABDD21E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = VerticalBlaster.sks; sourceTree = "<group>"; };
 		32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HorizontalBlaster.sks; sourceTree = "<group>"; };
 		32E276211E518EB800544B30 /* blaster.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = blaster.psd; sourceTree = "<group>"; };
-		32E276221E51909300544B30 /* HorizontalBlaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalBlaster.swift; sourceTree = "<group>"; };
+		32E276221E51909300544B30 /* Blaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blaster.swift; sourceTree = "<group>"; };
 		32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiledBackgroung.psd; sourceTree = "<group>"; };
 		32E32C591E3DFCBC009858D9 /* title.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = title.psd; sourceTree = "<group>"; };
 		32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sketch 3D.otf"; sourceTree = "<group>"; };
@@ -73,7 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */,
-				32E276221E51909300544B30 /* HorizontalBlaster.swift */,
+				32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */,
+				32E276221E51909300544B30 /* Blaster.swift */,
 			);
 			name = "Various Obstacles";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				32BFD85F1E519BC6003B169C /* Obstacles.sks in Resources */,
 				32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */,
 				32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */,
+				32E02E011E54EA7B009826A3 /* VerticalBlaster.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +275,7 @@
 			files = (
 				32BFD8621E51A10D003B169C /* Obstacles.swift in Sources */,
 				32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */,
-				32E276231E51909300544B30 /* HorizontalBlaster.swift in Sources */,
+				32E276231E51909300544B30 /* Blaster.swift in Sources */,
 				3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */,
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,

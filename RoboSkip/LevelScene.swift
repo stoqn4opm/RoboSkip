@@ -27,7 +27,7 @@ class LevelScene: SKScene {
         
         let obstaclesLayerRef = self.childNode(withName: "Obstacles") as? SKReferenceNode
         let obstaclesLayer = obstaclesLayerRef?.getBasedChildNode() as? Obstacles
-        obstaclesLayer?.fireHorizontalLaser1()
+        obstaclesLayer?.fireVerticalLaser1()
     }
 
     

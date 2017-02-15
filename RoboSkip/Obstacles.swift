@@ -12,7 +12,13 @@ class Obstacles: SKNode {
 
     func fireHorizontalLaser1() {
         let blasterRef = self.childNode(withName: "BlasterHor1") as? SKReferenceNode
-        let blaster = blasterRef?.getBasedChildNode() as? HorizontalBlaster
+        let blaster = blasterRef?.getBasedChildNode() as? Blaster
         blaster?.fire()
-    }    
+    }
+    
+    func fireVerticalLaser1() {
+        let blasterRef = self.childNode(withName: "BlasterVer1") as? SKReferenceNode
+        let blaster = blasterRef?.getBasedChildNode() as? Blaster
+        blaster?.fire()
+    }
 }
