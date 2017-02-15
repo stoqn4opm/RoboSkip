@@ -18,13 +18,13 @@ fileprivate let flashSpeed3RepeatCount = 5
 
 class Blaster: SKNode {
 
-    var firstBlaster: SKSpriteNode? {
+    fileprivate var firstBlaster: SKSpriteNode? {
         return self.childNode(withName: "first") as? SKSpriteNode
     }
-    var secondBlaster: SKSpriteNode? {
+    fileprivate var secondBlaster: SKSpriteNode? {
         return self.childNode(withName: "second") as? SKSpriteNode
     }
-    var beam: SKSpriteNode? {
+    fileprivate var beam: SKSpriteNode? {
         return self.childNode(withName: "beam") as? SKSpriteNode
     }
 }
@@ -33,20 +33,37 @@ class Blaster: SKNode {
 extension Blaster {
     func fire() {
         
-        let beamOn = SKAction.run { self.beam?.alpha = 1 }
-        let beamOff = SKAction.run { self.beam?.alpha = 0 }
-        
         let flashBlasters = SKAction.sequence([flashAtSpeed1Action,
                                                flashAtSpeed2Action,
                                                flashAtSpeed3Action,
-                                               beamOn,
-                                               SKAction.wait(forDuration: 2),
-                                               beamOff])
+                                               turnOnBeamFor(2)])
         
         self.run(flashBlasters)
     }
 }
 
+//MARK: - Beam
+extension Blaster {
+    
+    fileprivate func turnOnBeamFor(_ time: TimeInterval) -> SKAction {
+        
+        let wait = SKAction.wait(forDuration: time)
+
+        guard let beam = self.beam else { return wait }
+        let beamOn = SKAction.run {
+            beam.alpha = 1
+            beam.physicsBody = SKPhysicsBody(rectangleOf: beam.size)
+            beam.physicsBody?.affectedByGravity = false
+            beam.physicsBody?.allowsRotation = false
+            beam.physicsBody?.isDynamic = false
+        }
+        let beamOff = SKAction.run {
+            beam.alpha = 0
+            beam.physicsBody = nil
+        }
+        return SKAction.sequence([beamOn, wait, beamOff])
+    }
+}
 
 //MARK: - Blasters Alpha Actions
 extension Blaster {
