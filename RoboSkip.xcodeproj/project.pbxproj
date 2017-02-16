@@ -11,7 +11,6 @@
 		32ABFCEA1E54EE8D0075208F /* CharacterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32ABFCE91E54EE8D0075208F /* CharacterScene.sks */; };
 		32BFD85F1E519BC6003B169C /* Obstacles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32BFD85E1E519BC6003B169C /* Obstacles.sks */; };
 		32BFD8621E51A10D003B169C /* Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFD8611E51A10D003B169C /* Obstacles.swift */; };
-		32DA70961E50F9BE0040C33C /* LevelSceneCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA70951E50F9BE0040C33C /* LevelSceneCharacter.swift */; };
 		32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAB6A51E39EFF00073D53B /* MenuScene.swift */; };
 		32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */; };
 		32DAB6AA1E39F1DD0073D53B /* shader_metal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */; };
@@ -35,7 +34,6 @@
 		32ABFCE91E54EE8D0075208F /* CharacterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterScene.sks; sourceTree = "<group>"; };
 		32BFD85E1E519BC6003B169C /* Obstacles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacles.sks; sourceTree = "<group>"; };
 		32BFD8611E51A10D003B169C /* Obstacles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
-		32DA70951E50F9BE0040C33C /* LevelSceneCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneCharacter.swift; sourceTree = "<group>"; };
 		32DAB6A51E39EFF00073D53B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		32DAB6A71E39F1DD0073D53B /* shader_opengl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_opengl.fsh; sourceTree = "<group>"; };
 		32DAB6A81E39F1DD0073D53B /* shader_metal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader_metal.fsh; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			children = (
 				32E525621E505881007C2110 /* LevelScene.sks */,
 				32E525641E505A06007C2110 /* LevelScene.swift */,
-				32DA70951E50F9BE0040C33C /* LevelSceneCharacter.swift */,
 				32BFD85E1E519BC6003B169C /* Obstacles.sks */,
 				32BFD8611E51A10D003B169C /* Obstacles.swift */,
 				32BFD8601E519C38003B169C /* Various Obstacles */,
@@ -279,7 +276,6 @@
 				3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */,
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
-				32DA70961E50F9BE0040C33C /* LevelSceneCharacter.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
 				32E525651E505A06007C2110 /* LevelScene.swift in Sources */,
 				32E468871E3B381500AC5AF0 /* GameManager.swift in Sources */,
