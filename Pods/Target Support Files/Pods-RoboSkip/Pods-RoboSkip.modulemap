@@ -1,0 +1,6 @@
+framework module Pods_RoboSkip {
+  umbrella header "Pods-RoboSkip-umbrella.h"
+
+  export *
+  module * { export * }
+}
