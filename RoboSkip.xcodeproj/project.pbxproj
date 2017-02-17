@@ -19,6 +19,7 @@
 		32DABDCE1E31568E00E392B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCC1E31568E00E392B1 /* Main.storyboard */; };
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
 		32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */; };
+		32DF35951E55949C00E85353 /* ObstaclesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF35941E55949C00E85353 /* ObstaclesController.swift */; };
 		32E02E011E54EA7B009826A3 /* VerticalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */; };
 		32E276201E518CAE00544B30 /* HorizontalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */; };
 		32E276231E51909300544B30 /* Blaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E276221E51909300544B30 /* Blaster.swift */; };
@@ -44,6 +45,7 @@
 		32DABDCF1E31568E00E392B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DABDD21E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DF35941E55949C00E85353 /* ObstaclesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObstaclesController.swift; sourceTree = "<group>"; };
 		32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = VerticalBlaster.sks; sourceTree = "<group>"; };
 		32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HorizontalBlaster.sks; sourceTree = "<group>"; };
 		32E276211E518EB800544B30 /* blaster.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = blaster.psd; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				32E525621E505881007C2110 /* LevelScene.sks */,
 				32E525641E505A06007C2110 /* LevelScene.swift */,
 				32BFD85E1E519BC6003B169C /* Obstacles.sks */,
+				32DF35941E55949C00E85353 /* ObstaclesController.swift */,
 				32BFD8611E51A10D003B169C /* Obstacles.swift */,
 				32BFD8601E519C38003B169C /* Various Obstacles */,
 			);
@@ -273,6 +276,7 @@
 				32BFD8621E51A10D003B169C /* Obstacles.swift in Sources */,
 				32DABDCB1E31568E00E392B1 /* GameViewController.swift in Sources */,
 				32E276231E51909300544B30 /* Blaster.swift in Sources */,
+				32DF35951E55949C00E85353 /* ObstaclesController.swift in Sources */,
 				3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */,
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
