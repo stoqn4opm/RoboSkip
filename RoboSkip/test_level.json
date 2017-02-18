@@ -1,0 +1,10 @@
+{
+  "title": "Test Level",
+  "needsAssetsVersion": 1.0,
+  "releaseDate": "2014-06-25T00:00:00.000Z",
+  "blasters": [
+      "BlasterHor1",
+      "BlasterVer1",
+      ["BlasterHor3", "BlasterHor2", "BlasterVer1"]
+  ]
+}

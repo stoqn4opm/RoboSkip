@@ -8,14 +8,18 @@
 
 import UIKit
 import SpriteKit
+import SwiftyJSON
 
 class LevelScene: SKScene {
 
     //MARK: - Properties
+    var sceneInfo: JSON?
+    
     var character: CharacterNode!
     var leftSwipeRecognizer: UIGestureRecognizer?
     var rightSwipeRecognizer: UIGestureRecognizer?
     var tapHoldRecognizer: UIGestureRecognizer?
+    
     
     //MARK: - Entrance Point Of Scene
     override func didMove(to view: SKView) {
@@ -48,13 +52,14 @@ extension LevelScene {
 extension LevelScene {
     func loadObstacles() {
         let obstaclesLayerRef = self.childNode(withName: "Obstacles") as? SKReferenceNode
-        let obstaclesLayer = obstaclesLayerRef?.getBasedChildNode() as? Obstacles
-        obstaclesLayer?.fireVerticalLaser1()
-        obstaclesLayer?.fireVerticalLaser2()
-        obstaclesLayer?.fireHorizontalLaser1()
-        obstaclesLayer?.fireHorizontalLaser2()
-        obstaclesLayer?.fireHorizontalLaser3()
-        obstaclesLayer?.fireHorizontalLaser4()
+        guard let obstaclesLayer = obstaclesLayerRef?.getBasedChildNode() as? Obstacles else {
+            print("no obstacles layer")
+            return
+        }
+        let obstaclesController = JSONObstaclesController(obstacles: obstaclesLayer)
+        if let blastersPattern = sceneInfo?["blasters"].array {
+            obstaclesController.playBlastersPattern(from: blastersPattern)
+        }
     }
 }
 

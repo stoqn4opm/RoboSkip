@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320774711E582FD700F7C8E3 /* test_level.json in Resources */ = {isa = PBXBuildFile; fileRef = 320774701E582FD700F7C8E3 /* test_level.json */; };
 		3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3238B8841E41D52F0054984D /* HelperExtensions.swift */; };
 		32ABFCEA1E54EE8D0075208F /* CharacterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32ABFCE91E54EE8D0075208F /* CharacterScene.sks */; };
 		32BFD85F1E519BC6003B169C /* Obstacles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32BFD85E1E519BC6003B169C /* Obstacles.sks */; };
@@ -20,6 +21,7 @@
 		32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDCF1E31568E00E392B1 /* Assets.xcassets */; };
 		32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DABDD11E31568E00E392B1 /* LaunchScreen.storyboard */; };
 		32E02E011E54EA7B009826A3 /* VerticalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */; };
+		32E030CA1E56E15700AF194C /* JSONObstaclesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E030C91E56E15700AF194C /* JSONObstaclesController.swift */; };
 		32E276201E518CAE00544B30 /* HorizontalBlaster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */; };
 		32E276231E51909300544B30 /* Blaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E276221E51909300544B30 /* Blaster.swift */; };
 		32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4687D1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift */; };
@@ -32,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		198C4C91B6F80B7EF78C5B99 /* Pods-RoboSkip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboSkip.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoboSkip/Pods-RoboSkip.release.xcconfig"; sourceTree = "<group>"; };
+		320774701E582FD700F7C8E3 /* test_level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_level.json; sourceTree = "<group>"; };
 		3238B8841E41D52F0054984D /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		32ABFCE91E54EE8D0075208F /* CharacterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterScene.sks; sourceTree = "<group>"; };
 		32BFD85E1E519BC6003B169C /* Obstacles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacles.sks; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		32DABDD21E31568E00E392B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DABDD41E31568E00E392B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E02E001E54EA7B009826A3 /* VerticalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = VerticalBlaster.sks; sourceTree = "<group>"; };
+		32E030C91E56E15700AF194C /* JSONObstaclesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObstaclesController.swift; sourceTree = "<group>"; };
 		32E2761F1E518CAE00544B30 /* HorizontalBlaster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HorizontalBlaster.sks; sourceTree = "<group>"; };
 		32E276211E518EB800544B30 /* blaster.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = blaster.psd; sourceTree = "<group>"; };
 		32E276221E51909300544B30 /* Blaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blaster.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		32E32C5E1E3E3FA6009858D9 /* Level Scene */ = {
 			isa = PBXGroup;
 			children = (
+				320774701E582FD700F7C8E3 /* test_level.json */,
+				32E030C91E56E15700AF194C /* JSONObstaclesController.swift */,
 				32E525621E505881007C2110 /* LevelScene.sks */,
 				32E525641E505A06007C2110 /* LevelScene.swift */,
 				32BFD85E1E519BC6003B169C /* Obstacles.sks */,
@@ -283,6 +289,7 @@
 				32E276201E518CAE00544B30 /* HorizontalBlaster.sks in Resources */,
 				32DABDD01E31568E00E392B1 /* Assets.xcassets in Resources */,
 				32BFD85F1E519BC6003B169C /* Obstacles.sks in Resources */,
+				320774711E582FD700F7C8E3 /* test_level.json in Resources */,
 				32ABFCEA1E54EE8D0075208F /* CharacterScene.sks in Resources */,
 				32DABDD31E31568E00E392B1 /* LaunchScreen.storyboard in Resources */,
 				32DAB6A91E39F1DD0073D53B /* shader_opengl.fsh in Resources */,
@@ -350,6 +357,7 @@
 				32E276231E51909300544B30 /* Blaster.swift in Sources */,
 				3238B8851E41D52F0054984D /* HelperExtensions.swift in Sources */,
 				32DAB6A61E39EFF00073D53B /* MenuScene.swift in Sources */,
+				32E030CA1E56E15700AF194C /* JSONObstaclesController.swift in Sources */,
 				32E4687E1E3B0C9900AC5AF0 /* TiledSKSpriteNode.swift in Sources */,
 				32DABDC31E31568E00E392B1 /* AppDelegate.swift in Sources */,
 				32E525651E505A06007C2110 /* LevelScene.swift in Sources */,

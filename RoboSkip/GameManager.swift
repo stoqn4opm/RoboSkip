@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import SwiftyJSON
 
 class GameManager {
     
@@ -45,6 +46,12 @@ extension GameManager {
     
     func loadLevelScene() {
         guard let scene = SKScene(fileNamed: "LevelScene") as? LevelScene else { return }
+        
+        guard let json = loadLevelInfo() else {
+            print("no level info")
+            return
+        }
+        scene.sceneInfo = json
         loadScene(scene: scene)
     }
     
@@ -54,3 +61,20 @@ extension GameManager {
     }
 }
 
+extension GameManager {
+    func loadLevelInfo() -> JSON? {
+        guard let filePath = Bundle.main.path(forResource: "test_level", ofType: "json") else {
+            print("test_level.json not found")
+            return nil
+        }
+        guard let jsonString = try? String.init(contentsOfFile: filePath, encoding: .utf8) else {
+            print("can not load test_level.json file")
+            return nil
+        }
+        guard let dataFromString = jsonString.data(using: .utf8, allowLossyConversion: false) else {
+            return nil
+        }
+        let json = JSON(data: dataFromString)
+        return json
+    }
+}
