@@ -31,14 +31,13 @@ class Blaster: SKNode {
 
 //MARK: - Actions
 extension Blaster {
-    func fire() {
+    func fireAction() -> SKAction {
         
         let flashBlasters = SKAction.sequence([flashAtSpeed1Action,
                                                flashAtSpeed2Action,
                                                flashAtSpeed3Action,
                                                turnOnBeamFor(2)])
-        
-        self.run(flashBlasters)
+        return flashBlasters
     }
 }
 
