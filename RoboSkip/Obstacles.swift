@@ -27,27 +27,27 @@ class Obstacles: SKNode {
     }
     
     func fireBlasterAction(for ref: SKReferenceNode?) -> SKAction? {
-        return ref?.fireBlasterAction()
+        return ref?.fireBlasterAction
     }
 }
 
 //MARK: - Helpers
 extension SKReferenceNode {
-    fileprivate func fireBlasterAction() -> SKAction? {
+    fileprivate var fireBlasterAction: SKAction? {
         guard let child = children.first else { return nil }
         child.name = "child"
-        guard let action = child.blasterAction() else { return nil }
+        guard let action = child.blasterAction else { return nil }
         return SKAction.run(action, onChildWithName: child.name!)
     }
 }
 
 extension SKNode {
-    fileprivate func blasterAction() -> SKAction? {
+    fileprivate var blasterAction: SKAction? {
         if let blasterChild = children.first as? Blaster {
             if blasterChild.name == nil {
                 blasterChild.name = "blaster_child"
             }
-            let action = SKAction.run(blasterChild.fireAction(), onChildWithName: blasterChild.name!)
+            let action = SKAction.run(blasterChild.fireAction, onChildWithName: blasterChild.name!)
             return action
         }
         return nil

@@ -31,7 +31,7 @@ class Blaster: SKNode {
 
 //MARK: - Actions
 extension Blaster {
-    func fireAction() -> SKAction {
+    var fireAction: SKAction {
         
         let flashBlasters = SKAction.sequence([flashAtSpeed1Action,
                                                flashAtSpeed2Action,
@@ -39,6 +39,8 @@ extension Blaster {
                                                turnOnBeamFor(2)])
         return flashBlasters
     }
+    
+    static let actionDuration = 3.59 // duration of fire action
 }
 
 //MARK: - Beam

@@ -30,7 +30,7 @@ extension JSONObstaclesController {
             let oldActionQueueCount = actionsQueue.count
             recursiveHelper(json: command, queue: &actionsQueue)
             guard oldActionQueueCount != actionsQueue.count else { continue }
-            actionsQueue.append(SKAction.wait(forDuration: 1))
+            actionsQueue.append(SKAction.wait(forDuration: Blaster.actionDuration))
         }
         let wholeComplexAction = SKAction.sequence(actionsQueue)
         obstacles.run(wholeComplexAction)
