@@ -18,8 +18,8 @@ class LevelScene: SKScene {
     var character: CharacterNode!
     var leftSwipeRecognizer: UIGestureRecognizer?
     var rightSwipeRecognizer: UIGestureRecognizer?
-    var tapHoldRecognizer: UIGestureRecognizer?
-    
+    var jumpHoldRecognizer: UIGestureRecognizer?
+    var bendHeadHoldRecognizer: UIGestureRecognizer?
     
     //MARK: - Entrance Point Of Scene
     override func didMove(to view: SKView) {
@@ -73,39 +73,46 @@ extension LevelScene {
         let right = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
         right.direction = .right
         
-        let hold = UILongPressGestureRecognizer(target: self, action: #selector(tapAndHoldRecogizer(_:)))
-        hold.minimumPressDuration = 0
+        let jump = UILongPressGestureRecognizer(target: self, action: #selector(jumpHoldRecogizer(_:)))
+        jump.minimumPressDuration = 0
+        
+        let bendHead = UILongPressGestureRecognizer(target: self, action: #selector(bendHeadHoldRecogizer(_:)))
+        bendHead.minimumPressDuration = 1
         
         view?.addGestureRecognizer(left)
         view?.addGestureRecognizer(right)
-        view?.addGestureRecognizer(hold)
+        view?.addGestureRecognizer(jump)
+        view?.addGestureRecognizer(bendHead)
         
         leftSwipeRecognizer = left
         rightSwipeRecognizer = right
-        tapHoldRecognizer = hold
+        jumpHoldRecognizer = jump
+        bendHeadHoldRecognizer = bendHead
         
         left.delegate = self
         right.delegate = self
-        hold.delegate = self
+        jump.delegate = self
     }
     
     func removeGestureRecognizers() {
         guard
             let left = leftSwipeRecognizer,
             let right = rightSwipeRecognizer,
-            let tap = tapHoldRecognizer
+            let tap = jumpHoldRecognizer,
+            let head = bendHeadHoldRecognizer
             else { return }
         
         view?.removeGestureRecognizer(left)
         view?.removeGestureRecognizer(right)
         view?.removeGestureRecognizer(tap)
+        view?.removeGestureRecognizer(head)
     }
     
     @objc func swipeLeft() { character.moveLeft() }
     @objc func swipeRight() { character.moveRight() }
     
     
-    func tapAndHoldRecogizer(_ recognizer: UILongPressGestureRecognizer) {
+    func jumpHoldRecogizer(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
             character.bend()
         } else {
@@ -113,6 +120,18 @@ extension LevelScene {
                 recognizer.state == .ended ||
                 recognizer.state == .failed {
                 character.jump()
+            }
+        }
+    }
+    
+    func bendHeadHoldRecogizer(_ recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state == .began {
+            character.bendHead()
+        } else {
+            if recognizer.state == .cancelled ||
+                recognizer.state == .ended ||
+                recognizer.state == .failed {
+                character.releaseHead()
             }
         }
     }

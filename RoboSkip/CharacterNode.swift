@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 
 class CharacterNode: SKNode {
-    fileprivate var bendLimit: SKPhysicsJointLimit?
+    fileprivate var legSpring: SKPhysicsJointSpring?
+    fileprivate var headBendLimit: SKPhysicsJointLimit?
     fileprivate let positionSwitchTime = 0.1
     fileprivate let springStrength: CGFloat = 34
 }
@@ -39,6 +40,7 @@ extension CharacterNode {
                                                      axis: CGVector(dx: 0, dy: 1))
         self.scene?.physicsWorld.add(spring)
         self.scene?.physicsWorld.add(slideLimit)
+        legSpring = spring
     }
     
     fileprivate func attachHeadToBody() {
@@ -46,7 +48,7 @@ extension CharacterNode {
         guard let head = self.childNode(withName: "head") as? SKSpriteNode else { return }
         
         let spring = SKPhysicsJointSpring.joint(withBodyA: body.physicsBody!, bodyB: head.physicsBody!, anchorA: body.position, anchorB: head.position)
-        spring.frequency = 8
+        spring.frequency = 4
         let slideLimit = SKPhysicsJointSliding.joint(withBodyA: body.physicsBody!, bodyB: head.physicsBody!, anchor: body.position, axis: CGVector(dx: 0, dy: 1))
         
         self.scene?.physicsWorld.add(spring)
@@ -57,24 +59,32 @@ extension CharacterNode {
 //MARK: - Actions
 extension CharacterNode {
     func bend() {
-        guard let body = self.childNode(withName: "body") as? SKSpriteNode else { return }
-        guard let leg = self.childNode(withName: "leg") as? SKSpriteNode else { return }
-        
-        bendLimit = SKPhysicsJointLimit.joint(withBodyA: body.physicsBody!,
-                                              bodyB: leg.physicsBody!,
-                                              anchorA: body.position,
-                                              anchorB: leg.position)
-        
-        bendLimit!.maxLength = leg.size.height * 1.5
-        self.scene?.physicsWorld.add(bendLimit!)
+        legSpring?.frequency = 1
     }
     
     func jump() {
-        guard let jumpLimit = bendLimit else { return }
-        self.scene?.physicsWorld.remove(jumpLimit)
+        legSpring?.frequency = springStrength
     }
     
-    var scenePlacements: [CGFloat] {
+    func bendHead() {
+        guard let body = self.childNode(withName: "body") as? SKSpriteNode else { return }
+        guard let head = self.childNode(withName: "head") as? SKSpriteNode else { return }
+        
+        headBendLimit = SKPhysicsJointLimit.joint(withBodyA: body.physicsBody!,
+                                              bodyB: head.physicsBody!,
+                                              anchorA: body.position,
+                                              anchorB: head.position)
+        
+        headBendLimit!.maxLength = head.size.height * 1.25
+        self.scene?.physicsWorld.add(headBendLimit!)
+    }
+    
+    func releaseHead() {
+        guard let headBendLimit = headBendLimit else { return }
+        self.scene?.physicsWorld.remove(headBendLimit)
+    }
+    
+    private var scenePlacements: [CGFloat] {
         guard let width = self.scene?.size.width else { return [] }
         return [-width / 3, 0, width / 3]
     }
