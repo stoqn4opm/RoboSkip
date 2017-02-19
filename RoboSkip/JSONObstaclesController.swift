@@ -10,7 +10,8 @@ import Foundation
 import SwiftyJSON
 import SpriteKit
 
-class JSONObstaclesController {
+//MARK: - Initialization
+class JSONObstaclesController: Loggable {
     
     let obstacles: Obstacles
     var actionsQueue: [SKAction] = []
@@ -18,6 +19,10 @@ class JSONObstaclesController {
     init(obstacles: Obstacles) {
         self.obstacles = obstacles
     }
+}
+
+//MARK: - Blasters Pattern
+extension JSONObstaclesController {
     
     func playBlastersPattern(from json: [JSON]) {
         
@@ -53,15 +58,15 @@ class JSONObstaclesController {
     
     private func append(_ command: String) -> SKAction? {
         guard let blasterName = Obstacles.BlasterNames(rawValue: command) else {
-            print("not a blaster name")
+            printLog("not a blaster name")
             return nil
         }
         guard let blasterRef = obstacles.getBlasterRef(blasterName) else {
-            print("not such blaser in scene")
+            printLog("not such blaser in scene")
             return nil
         }
         guard let fireBlasterAction = obstacles.fireBlasterAction(for: blasterRef) else {
-            print("no blaster action")
+            printLog("no blaster action")
             return nil
         }
         let action = SKAction.run(fireBlasterAction, onChildWithName: blasterName.rawValue)

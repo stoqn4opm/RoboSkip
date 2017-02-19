@@ -10,6 +10,7 @@ import SpriteKit
 
 class Obstacles: SKNode {
 
+    //MARK: - Main Interface
     enum BlasterNames: String {
         case hor1 = "BlasterHor1"
         case hor2 = "BlasterHor2"
@@ -30,6 +31,7 @@ class Obstacles: SKNode {
     }
 }
 
+//MARK: - Helpers
 extension SKReferenceNode {
     fileprivate func fireBlasterAction() -> SKAction? {
         guard let child = children.first else { return nil }

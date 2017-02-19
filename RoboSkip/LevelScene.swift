@@ -49,11 +49,11 @@ extension LevelScene {
 }
 
 //MARK: - Obstacles
-extension LevelScene {
+extension LevelScene: Loggable {
     func loadObstacles() {
         let obstaclesLayerRef = self.childNode(withName: "Obstacles") as? SKReferenceNode
         guard let obstaclesLayer = obstaclesLayerRef?.getBasedChildNode() as? Obstacles else {
-            print("no obstacles layer")
+            printLog("no obstacles layer")
             return
         }
         let obstaclesController = JSONObstaclesController(obstacles: obstaclesLayer)
