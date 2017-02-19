@@ -58,15 +58,15 @@ extension JSONObstaclesController {
     
     private func append(_ command: String) -> SKAction? {
         guard let blasterName = Obstacles.BlasterNames(rawValue: command) else {
-            printLog("not a blaster name")
+            printLog("'\(command)' is not a blaster name")
             return nil
         }
         guard let blasterRef = obstacles.getBlasterRef(blasterName) else {
-            printLog("not such blaser in scene")
+            printLog("no such blaser in scene: '\(blasterName.rawValue)'")
             return nil
         }
         guard let fireBlasterAction = obstacles.fireBlasterAction(for: blasterRef) else {
-            printLog("no blaster action")
+            printLog("no blaster action for blaster: '\(blasterName.rawValue)'")
             return nil
         }
         let action = SKAction.run(fireBlasterAction, onChildWithName: blasterName.rawValue)
