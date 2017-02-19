@@ -1,0 +1,23 @@
+{
+    "title": "Test Level",
+    "needsAssetsVersion": 1.0,
+    "releaseDate": "2017-02-17T00:00:00.000Z",
+    "blasters": [
+                 "BlasterHor1",
+                 "BlasterVer1",
+                 ["BlasterHor3", "BlasterHor2", "BlasterVer1"],
+                 "BlasterVer1",
+                 "BlasterVer2",
+                 "BlasterHor3",
+                 "BlasterHor4",
+                 "BlasterHor1",
+                 "BlasterHor3",
+                 "BlasterHor2",
+                 "BlasterVer3",
+                 "BlasterHor1",
+                 "BlasterVer1",
+                 "BlasterHor3",
+                 "BlasterHor1",
+                 "BlasterHor4"
+                 ]
+}
