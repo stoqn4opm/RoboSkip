@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		198C4C91B6F80B7EF78C5B99 /* Pods-RoboSkip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboSkip.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoboSkip/Pods-RoboSkip.release.xcconfig"; sourceTree = "<group>"; };
 		320774701E582FD700F7C8E3 /* test_level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_level.json; sourceTree = "<group>"; };
+		320870A21E5ADCA8005D7544 /* thugLifeBall.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = thugLifeBall.psd; sourceTree = "<group>"; };
 		3238B8841E41D52F0054984D /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		32ABFCE91E54EE8D0075208F /* CharacterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterScene.sks; sourceTree = "<group>"; };
 		32BFD85E1E519BC6003B169C /* Obstacles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacles.sks; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 			children = (
 				32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */,
 				32E32C591E3DFCBC009858D9 /* title.psd */,
+				320870A21E5ADCA8005D7544 /* thugLifeBall.psd */,
 				32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */,
 				32E276211E518EB800544B30 /* blaster.psd */,
 				32DABDCF1E31568E00E392B1 /* Assets.xcassets */,

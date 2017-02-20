@@ -8,13 +8,13 @@
 
 import SpriteKit
 
-fileprivate let flashSpeed1 = SKAction.wait(forDuration: 0.5)
-fileprivate let flashSpeed2 = SKAction.wait(forDuration: 0.2)
-fileprivate let flashSpeed3 = SKAction.wait(forDuration: 0.1)
+fileprivate let flashSpeed1 = SKAction.wait(forDuration: 0.1)
+fileprivate let flashSpeed2 = SKAction.wait(forDuration: 0.05)
+fileprivate let flashSpeed3 = SKAction.wait(forDuration: 0.01)
 
 fileprivate let flashSpeed1RepeatCount = 1
 fileprivate let flashSpeed2RepeatCount = 2
-fileprivate let flashSpeed3RepeatCount = 5
+fileprivate let flashSpeed3RepeatCount = 2
 
 class Blaster: SKNode {
 
@@ -36,11 +36,11 @@ extension Blaster {
         let flashBlasters = SKAction.sequence([flashAtSpeed1Action,
                                                flashAtSpeed2Action,
                                                flashAtSpeed3Action,
-                                               turnOnBeamFor(2)])
+                                               turnOnBeamFor(1.4)])
         return flashBlasters
     }
     
-    static let actionDuration = 3.59 // duration of fire action
+    static let actionDuration = 2.0 // duration of fire action
 }
 
 //MARK: - Beam
