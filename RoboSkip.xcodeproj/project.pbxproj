@@ -38,6 +38,7 @@
 		320870A21E5ADCA8005D7544 /* thugLifeBall.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = thugLifeBall.psd; sourceTree = "<group>"; };
 		3238B8841E41D52F0054984D /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		32ABFCE91E54EE8D0075208F /* CharacterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterScene.sks; sourceTree = "<group>"; };
+		32AE45731E5B8B8B004FB068 /* fieldChange.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = fieldChange.psd; sourceTree = "<group>"; };
 		32BFD85E1E519BC6003B169C /* Obstacles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacles.sks; sourceTree = "<group>"; };
 		32BFD8611E51A10D003B169C /* Obstacles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
 		32DAB6A51E39EFF00073D53B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 			children = (
 				32E32C5A1E3E3064009858D9 /* Sketch 3D.otf */,
 				32E32C591E3DFCBC009858D9 /* title.psd */,
+				32AE45731E5B8B8B004FB068 /* fieldChange.psd */,
 				320870A21E5ADCA8005D7544 /* thugLifeBall.psd */,
 				32E2DB061E3D2DEE002FA656 /* tiledBackgroung.psd */,
 				32E276211E518EB800544B30 /* blaster.psd */,
