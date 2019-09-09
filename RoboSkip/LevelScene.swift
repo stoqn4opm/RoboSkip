@@ -105,7 +105,7 @@ extension LevelScene {
     @objc func swipeRight() { character.moveRight() }
     
     
-    func tapAndHoldRecogizer(_ recognizer: UILongPressGestureRecognizer) {
+    @objc func tapAndHoldRecogizer(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
             character.bend()
         } else {

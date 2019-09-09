@@ -14,7 +14,7 @@ extension SKSpriteNode {
     static func generateRepeatTiledNodeWithTile(tile: String, backgroundSizePoints: CGSize) -> SKSpriteNode? {
         
         // Load the tile as a SKTexture
-        let tileTex = SKTexture.init(imageNamed: tile)
+        let tileTex = SKTexture(imageNamed: tile)
         
         // Dimensions of tile image
         let tileSizePixels = CGSize(width: tileTex.size().width, height: tileTex.size().height)

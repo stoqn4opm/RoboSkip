@@ -95,10 +95,10 @@ extension Blaster {
     private var blastersFullAlphaAction: SKAction { return changeAlphaOfBlastersTo(1.0) }
     
     private func changeAlphaOfBlastersTo(_ value: CGFloat) -> SKAction {
-        return SKAction.run({[weak self] (Void) -> Void in
+        return SKAction.run { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.firstBlaster?.alpha = value
             strongSelf.secondBlaster?.alpha = value
-        })
+        }
     }
 }

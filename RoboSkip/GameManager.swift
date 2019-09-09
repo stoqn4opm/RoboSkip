@@ -75,7 +75,7 @@ extension GameManager {
         guard let dataFromString = jsonString.data(using: .utf8, allowLossyConversion: false) else {
             return nil
         }
-        let json = JSON(data: dataFromString)
+        let json = try? JSON(data: dataFromString)
         return json
     }
 }
